@@ -1,0 +1,26 @@
+spring:
+  jpa:
+    show-sql: false
+    properties:
+      hibernate:
+        default_schema: public
+    hibernate:
+      # possible values: validate | update | create | create-drop
+      ddl-auto: update
+      
+  datasource:
+    url: jdbc:postgresql://localhost:5432/emdm
+    username: santhosh
+    password: pike
+    driver-class-name: org.postgresql.Driver
+ 
+logging:
+  level:
+    root: fatal
+    com.msa: debug
+    org.springframework: ERROR
+    org.hibernate: ERROR
+  file: /tmp/config/logs/attributes-service.log
+  pattern:
+    console: "%d %-5level %logger : %msg%n"
+    file: "%d %-5level [%thread] %logger : %msg%n"
